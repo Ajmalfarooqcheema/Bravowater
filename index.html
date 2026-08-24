@@ -329,7 +329,7 @@ Water is fit for drinking
             }
         }
 
-        applyReport('reports/latest.jpg');
+        applyReport('reports/latest.jpeg');
 
         fetch('reports/latest.json', { cache: 'no-store' })
             .then(function (res) {
@@ -337,13 +337,13 @@ Water is fit for drinking
                 return res.json();
             })
             .then(function (data) {
-                var file = data.file || 'latest.jpg';
+                var file = data.file || 'latest.jpeg';
                 var dateLabel = data.date || '';
                 var src = 'reports/' + file + (dateLabel ? '?v=' + encodeURIComponent(dateLabel) : '');
                 applyReport(src, dateLabel);
             })
             .catch(function () {
-                applyReport('reports/latest.jpg');
+                applyReport('reports/latest.jpeg');
             });
 
         function openLightbox() {
