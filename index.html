@@ -152,11 +152,21 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#water-quality-report">Quality Report</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#certifications">Certifications</a>
 </nav>
-<div class="hidden md:block">
+<div class="hidden md:flex items-center gap-3">
+<button id="cart-toggle" aria-label="Open cart" class="relative flex items-center justify-center w-11 h-11 rounded-full text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size:26px;">shopping_cart</span>
+<span id="cart-badge" class="hidden absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-error text-on-error text-[11px] leading-[18px] text-center font-semibold">0</span>
+</button>
 <a href="#products" class="inline-block bg-primary text-on-primary px-6 py-2 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
                     Order Now
                 </a>
 </div>
+<!-- Mobile cart + hamburger -->
+<div class="md:hidden flex items-center gap-1">
+<button id="cart-toggle-mobile" aria-label="Open cart" class="relative flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-primary/5 transition-colors">
+<span class="material-symbols-outlined" style="font-size:26px;">shopping_cart</span>
+<span id="cart-badge-mobile" class="hidden absolute -top-1 -right-1 min-w-[18px] h-[18px] px-1 rounded-full bg-error text-on-error text-[11px] leading-[18px] text-center font-semibold">0</span>
+</button>
 <!-- Mobile hamburger -->
 <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-primary/5 transition-colors">
 <span class="material-symbols-outlined" style="font-size:28px;">menu</span>
@@ -247,7 +257,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Refillable jumbo bottle &middot; ideal for home &amp; office dispensers</p>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 200</span>
-<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+<button type="button" class="add-to-cart bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity" data-id="19l" data-name="19 Liter Bottle" data-price="200" data-unit="bottle">Add to Cart</button>
 </div>
 </div>
 </div>
@@ -260,7 +270,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Mid-size bottle &middot; great for small households</p>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 220</span>
-<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+<button type="button" class="add-to-cart bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity" data-id="12l" data-name="12 Liter Bottle" data-price="220" data-unit="bottle">Add to Cart</button>
 </div>
 </div>
 </div>
@@ -273,7 +283,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Compact bottle &middot; easy to carry and store</p>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 110</span>
-<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+<button type="button" class="add-to-cart bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity" data-id="6l" data-name="6 Liter Bottle" data-price="110" data-unit="bottle">Add to Cart</button>
 </div>
 </div>
 </div>
@@ -286,7 +296,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Pack of 6 bottles &middot; perfect for family use</p>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 230<span class="text-body-sm font-normal text-on-surface-variant">/pack</span></span>
-<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+<button type="button" class="add-to-cart bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity" data-id="1.5l-pack6" data-name="1.5 Liter Bottle (Pack of 6)" data-price="230" data-unit="pack">Add to Cart</button>
 </div>
 </div>
 </div>
@@ -299,7 +309,7 @@
 <p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Pack of 12 bottles &middot; on-the-go hydration</p>
 <div class="mt-auto flex items-center justify-between">
 <span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 240<span class="text-body-sm font-normal text-on-surface-variant">/pack</span></span>
-<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+<button type="button" class="add-to-cart bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity" data-id="0.5l-pack12" data-name="0.5 Liter Bottle (Pack of 12)" data-price="240" data-unit="pack">Add to Cart</button>
 </div>
 </div>
 </div>
@@ -376,6 +386,266 @@ Water is fit for drinking
 </div>
 </div>
 </footer>
+
+<!-- Cart overlay -->
+<div id="cart-overlay" class="hidden fixed inset-0 bg-black/40 z-[60]"></div>
+
+<!-- Cart Drawer -->
+<aside id="cart-drawer" class="hidden fixed top-0 right-0 h-full w-full sm:w-[420px] bg-surface-container-lowest z-[70] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out translate-x-full">
+<div class="flex items-center justify-between px-5 py-4 border-b border-outline-variant/20">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary">Your Cart</h3>
+<button id="cart-close" aria-label="Close cart" class="w-9 h-9 flex items-center justify-center rounded-full hover:bg-primary/5 text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div id="cart-items" class="flex-1 overflow-y-auto px-5 py-4 space-y-4">
+<!-- Empty state -->
+<div id="cart-empty" class="text-center py-16">
+<span class="material-symbols-outlined text-on-surface-variant/40" style="font-size:48px;">shopping_cart</span>
+<p class="font-body-md text-body-md text-on-surface-variant mt-3">Your cart is empty</p>
+</div>
+</div>
+<div id="cart-footer" class="hidden border-t border-outline-variant/20 px-5 py-4 space-y-3">
+<div class="flex items-center justify-between font-body-md text-body-md">
+<span class="text-on-surface-variant">Subtotal</span>
+<span id="cart-subtotal" class="text-primary font-headline-lg-mobile text-lg font-bold">Rs. 0</span>
+</div>
+<button id="checkout-open" class="w-full bg-primary text-on-primary py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Proceed to Checkout</button>
+</div>
+</aside>
+
+<!-- Checkout Modal -->
+<div id="checkout-overlay" class="hidden fixed inset-0 bg-black/40 z-[80] flex items-center justify-center p-4">
+<div class="glass-card bg-white w-full max-w-md rounded-xl p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto">
+<button id="checkout-close" aria-label="Close" class="absolute top-4 right-4 w-9 h-9 flex items-center justify-center rounded-full hover:bg-primary/5 text-on-surface-variant">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">Checkout</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-5">We don't take online payments yet — pay cash on delivery. Share your details and we'll confirm your order over WhatsApp.</p>
+
+<div id="checkout-summary" class="mb-5 space-y-1 text-body-sm font-body-sm text-on-surface-variant"></div>
+<div class="flex items-center justify-between mb-6 pt-3 border-t border-outline-variant/20">
+<span class="font-body-md text-body-md text-on-surface font-semibold">Total</span>
+<span id="checkout-total" class="text-primary font-headline-lg-mobile text-lg font-bold">Rs. 0</span>
+</div>
+
+<form id="checkout-form" class="space-y-4">
+<div>
+<label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Full Name</label>
+<input id="checkout-name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</div>
+<div>
+<label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Phone Number *</label>
+<input id="checkout-phone" type="tel" required placeholder="03XX-XXXXXXX" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"/>
+</div>
+<div>
+<label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Delivery Address</label>
+<textarea id="checkout-address" rows="2" placeholder="House #, Street, Area, City" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"></textarea>
+</div>
+<p id="checkout-error" class="hidden text-error font-body-sm text-body-sm">Please enter your name and phone number.</p>
+<button type="submit" class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined" style="font-size:20px;">chat</span>
+Send Order on WhatsApp
+</button>
+<a id="checkout-email-fallback" href="#" class="block text-center font-body-sm text-body-sm text-primary underline underline-offset-2">Or email us the order instead</a>
+</form>
+</div>
+</div>
+
+<script>
+    // ---- Order config ----
+    var STORE_WHATSAPP = '923335777750'; // +92 333 5777750
+    var STORE_EMAIL = 'bravowater2@gmail.com';
+    var CART_KEY = 'bravo_cart_v1';
+
+    function loadCart() {
+        try {
+            return JSON.parse(localStorage.getItem(CART_KEY)) || {};
+        } catch (e) {
+            return {};
+        }
+    }
+    function saveCart(cart) {
+        try { localStorage.setItem(CART_KEY, JSON.stringify(cart)); } catch (e) {}
+    }
+    var cart = loadCart(); // { id: { name, price, unit, qty } }
+
+    function cartCount() {
+        var n = 0;
+        for (var id in cart) n += cart[id].qty;
+        return n;
+    }
+    function cartSubtotal() {
+        var total = 0;
+        for (var id in cart) total += cart[id].qty * cart[id].price;
+        return total;
+    }
+    function fmtRs(n) { return 'Rs. ' + n.toLocaleString('en-PK'); }
+
+    function updateBadges() {
+        var count = cartCount();
+        [document.getElementById('cart-badge'), document.getElementById('cart-badge-mobile')].forEach(function (b) {
+            if (!b) return;
+            if (count > 0) { b.textContent = count; b.classList.remove('hidden'); }
+            else { b.classList.add('hidden'); }
+        });
+    }
+
+    function renderCart() {
+        var itemsEl = document.getElementById('cart-items');
+        var emptyEl = document.getElementById('cart-empty');
+        var footerEl = document.getElementById('cart-footer');
+        var ids = Object.keys(cart);
+
+        itemsEl.querySelectorAll('.cart-row').forEach(function (el) { el.remove(); });
+
+        if (ids.length === 0) {
+            emptyEl.classList.remove('hidden');
+            footerEl.classList.add('hidden');
+            updateBadges();
+            return;
+        }
+        emptyEl.classList.add('hidden');
+        footerEl.classList.remove('hidden');
+
+        ids.forEach(function (id) {
+            var item = cart[id];
+            var row = document.createElement('div');
+            row.className = 'cart-row flex items-center gap-3 glass-card rounded-lg p-3';
+            row.innerHTML =
+                '<div class="flex-1 min-w-0">' +
+                    '<p class="font-body-md text-body-md text-on-surface font-medium truncate">' + item.name + '</p>' +
+                    '<p class="font-body-sm text-body-sm text-on-surface-variant">' + fmtRs(item.price) + ' / ' + item.unit + '</p>' +
+                '</div>' +
+                '<div class="flex items-center gap-2">' +
+                    '<button class="qty-minus w-7 h-7 rounded-full border border-outline-variant/40 flex items-center justify-center text-primary" data-id="' + id + '">−</button>' +
+                    '<span class="w-5 text-center font-body-sm text-body-sm">' + item.qty + '</span>' +
+                    '<button class="qty-plus w-7 h-7 rounded-full border border-outline-variant/40 flex items-center justify-center text-primary" data-id="' + id + '">+</button>' +
+                '</div>' +
+                '<button class="cart-remove w-7 h-7 flex items-center justify-center text-error/70 hover:text-error" data-id="' + id + '" aria-label="Remove">' +
+                    '<span class="material-symbols-outlined" style="font-size:20px;">delete</span>' +
+                '</button>';
+            itemsEl.appendChild(row);
+        });
+
+        document.getElementById('cart-subtotal').textContent = fmtRs(cartSubtotal());
+        updateBadges();
+
+        itemsEl.querySelectorAll('.qty-plus').forEach(function (b) {
+            b.addEventListener('click', function () { cart[b.dataset.id].qty += 1; saveCart(cart); renderCart(); });
+        });
+        itemsEl.querySelectorAll('.qty-minus').forEach(function (b) {
+            b.addEventListener('click', function () {
+                cart[b.dataset.id].qty -= 1;
+                if (cart[b.dataset.id].qty <= 0) delete cart[b.dataset.id];
+                saveCart(cart); renderCart();
+            });
+        });
+        itemsEl.querySelectorAll('.cart-remove').forEach(function (b) {
+            b.addEventListener('click', function () { delete cart[b.dataset.id]; saveCart(cart); renderCart(); });
+        });
+    }
+
+    function addToCart(id, name, price, unit) {
+        if (cart[id]) cart[id].qty += 1;
+        else cart[id] = { name: name, price: price, unit: unit, qty: 1 };
+        saveCart(cart);
+        renderCart();
+        openCart();
+    }
+
+    // ---- Drawer open/close ----
+    var overlay = document.getElementById('cart-overlay');
+    var drawer = document.getElementById('cart-drawer');
+    function openCart() {
+        overlay.classList.remove('hidden');
+        drawer.classList.remove('hidden');
+        requestAnimationFrame(function () { drawer.classList.remove('translate-x-full'); });
+    }
+    function closeCart() {
+        drawer.classList.add('translate-x-full');
+        setTimeout(function () { drawer.classList.add('hidden'); overlay.classList.add('hidden'); }, 300);
+    }
+    [document.getElementById('cart-toggle'), document.getElementById('cart-toggle-mobile')].forEach(function (b) {
+        if (b) b.addEventListener('click', openCart);
+    });
+    document.getElementById('cart-close').addEventListener('click', closeCart);
+    overlay.addEventListener('click', function () { closeCart(); closeCheckout(); });
+
+    document.querySelectorAll('.add-to-cart').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            addToCart(btn.dataset.id, btn.dataset.name, parseFloat(btn.dataset.price), btn.dataset.unit);
+        });
+    });
+
+    // ---- Checkout modal ----
+    var checkoutOverlay = document.getElementById('checkout-overlay');
+    function openCheckout() {
+        if (cartCount() === 0) return;
+        var summary = document.getElementById('checkout-summary');
+        summary.innerHTML = '';
+        Object.keys(cart).forEach(function (id) {
+            var item = cart[id];
+            var row = document.createElement('div');
+            row.className = 'flex items-center justify-between';
+            row.innerHTML = '<span>' + item.qty + ' × ' + item.name + '</span><span>' + fmtRs(item.qty * item.price) + '</span>';
+            summary.appendChild(row);
+        });
+        document.getElementById('checkout-total').textContent = fmtRs(cartSubtotal());
+        closeCart();
+        checkoutOverlay.classList.remove('hidden');
+    }
+    function closeCheckout() { checkoutOverlay.classList.add('hidden'); }
+    document.getElementById('checkout-open').addEventListener('click', openCheckout);
+    document.getElementById('checkout-close').addEventListener('click', closeCheckout);
+
+    function buildOrderMessage(name, phone, address) {
+        var lines = [];
+        lines.push('New order — BRAVO Drinking Water');
+        lines.push('');
+        Object.keys(cart).forEach(function (id) {
+            var item = cart[id];
+            lines.push('• ' + item.qty + ' × ' + item.name + ' — ' + fmtRs(item.qty * item.price));
+        });
+        lines.push('');
+        lines.push('Total: ' + fmtRs(cartSubtotal()));
+        lines.push('');
+        lines.push('Name: ' + name);
+        lines.push('Phone: ' + phone);
+        if (address) lines.push('Address: ' + address);
+        return lines.join('\n');
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+        e.preventDefault();
+        var name = document.getElementById('checkout-name').value.trim();
+        var phone = document.getElementById('checkout-phone').value.trim();
+        var address = document.getElementById('checkout-address').value.trim();
+        var errorEl = document.getElementById('checkout-error');
+
+        if (!name || !phone) {
+            errorEl.classList.remove('hidden');
+            return;
+        }
+        errorEl.classList.add('hidden');
+
+        var message = buildOrderMessage(name, phone, address);
+        var waLink = 'https://wa.me/' + STORE_WHATSAPP + '?text=' + encodeURIComponent(message);
+        var mailLink = 'mailto:' + STORE_EMAIL + '?subject=' + encodeURIComponent('New order from ' + name) + '&body=' + encodeURIComponent(message);
+        document.getElementById('checkout-email-fallback').setAttribute('href', mailLink);
+
+        window.open(waLink, '_blank');
+
+        // Clear cart after sending
+        cart = {};
+        saveCart(cart);
+        renderCart();
+        closeCheckout();
+        document.getElementById('checkout-form').reset();
+    });
+
+    renderCart();
+</script>
 
 <script>
     (function () {
