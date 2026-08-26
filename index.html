@@ -151,6 +151,7 @@
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Source</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#water-quality-report">Quality Report</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#certifications">Certifications</a>
 </nav>
 <div class="hidden md:block">
 <button class="bg-primary text-on-primary px-6 py-2 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
@@ -169,6 +170,7 @@
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#">Source</a>
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#water-quality-report">Quality Report</a>
+<a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#certifications">Certifications</a>
 <button class="mt-2 w-full bg-primary text-on-primary px-6 py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
                     Order Now
                 </button>
@@ -229,12 +231,33 @@
 </div>
 </section>
 
+<!-- Certifications -->
+<section id="certifications" class="py-12 md:py-section-gap mb-12 md:mb-section-gap scroll-mt-24 md:scroll-mt-28">
+<div class="text-center mb-8 md:mb-12">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-3 md:mb-4">Certifications</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto px-2">Licensed and inspected by the Punjab Food Authority. Your trust is our standard.</p>
+</div>
+<div class="glass-card rounded-xl p-4 sm:p-6 md:p-8 max-w-3xl mx-auto">
+<div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+<div>
+<p class="font-body-md text-body-md text-on-surface font-semibold">Punjab Food Authority</p>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Food Business License &middot; License No. RWP/M-C/84926035</p>
+</div>
+<span class="inline-flex items-center gap-1.5 self-start sm:self-auto bg-blue-50 text-[#1a6eb5] border border-blue-200 px-3 py-1.5 rounded-full font-body-sm text-body-sm">
+<span class="material-symbols-outlined" style="font-size:18px;">verified</span>
+Valid until 30 Jun 2027
+</span>
+</div>
+<img src="certificate.jpg" alt="Punjab Food Authority Food Business License Certificate for BRAVO Drinking Water" class="block w-full h-auto rounded-lg shadow-md"/>
+</div>
+</section>
+
 <!-- Water Quality Report -->
 <!-- Monthly update: replace reports/latest.jpg and edit the date in reports/latest.json. Do not edit this HTML. -->
 <section id="water-quality-report" class="py-12 md:py-section-gap mb-12 md:mb-section-gap scroll-mt-24 md:scroll-mt-28">
 <div class="text-center mb-8 md:mb-12">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-3 md:mb-4">Water Quality Report</h2>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto px-2">Tested weekly in our lab. Every batch is checked so you know your water is safe to drink.</p>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto px-2">Tested monthly in our lab. Every batch is checked so you know your water is safe to drink.</p>
 </div>
 <div class="glass-card rounded-xl p-4 sm:p-6 md:p-8 max-w-3xl mx-auto">
 <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
@@ -251,6 +274,14 @@ Water is fit for drinking
 </div>
 </section>
 </main>
+
+<!-- Certificate lightbox -->
+<div id="certificate-lightbox" class="fixed inset-0 z-[100] bg-black/80 items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Full size Punjab Food Authority license certificate">
+<button type="button" id="certificate-lightbox-close" class="absolute top-4 right-4 text-white/90 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Close">
+<span class="material-symbols-outlined" style="font-size:32px;">close</span>
+</button>
+<img id="certificate-lightbox-img" alt="Punjab Food Authority Food Business License Certificate for BRAVO Drinking Water" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"/>
+</div>
 
 <!-- Report lightbox -->
 <div id="report-lightbox" class="fixed inset-0 z-[100] bg-black/80 items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Full size water quality report">
@@ -278,6 +309,7 @@ Water is fit for drinking
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-200" href="#">Privacy Policy</a>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-200" href="#">Terms of Service</a>
 <a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-200" href="#water-quality-report">Water Quality Report</a>
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary dark:hover:text-tertiary-fixed-dim transition-colors duration-200" href="#certifications">Certifications</a>
 </nav>
 </div>
 <div class="font-body-sm text-body-sm text-primary dark:text-tertiary-fixed text-center md:text-left mt-8 pt-6 border-t border-outline-variant/20">
@@ -329,7 +361,7 @@ Water is fit for drinking
             }
         }
 
-        applyReport('reports/latest.jpeg');
+        applyReport('reports/latest.jpg');
 
         fetch('reports/latest.json', { cache: 'no-store' })
             .then(function (res) {
@@ -337,18 +369,47 @@ Water is fit for drinking
                 return res.json();
             })
             .then(function (data) {
-                var file = data.file || 'latest.jpeg';
+                var file = data.file || 'latest.jpg';
                 var dateLabel = data.date || '';
                 var src = 'reports/' + file + (dateLabel ? '?v=' + encodeURIComponent(dateLabel) : '');
                 applyReport(src, dateLabel);
             })
             .catch(function () {
-                applyReport('reports/latest.jpeg');
+                applyReport('reports/latest.jpg');
             });
 
         function openLightbox() {
             lightboxImg.src = reportImg.src;
             lightboxImg.alt = reportImg.alt;
+            lightbox.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+            lightbox.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        btn.addEventListener('click', openLightbox);
+        closeBtn.addEventListener('click', closeLightbox);
+        lightbox.addEventListener('click', function (e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    })();
+
+    (function () {
+        const btn = document.getElementById('certificate-image-btn');
+        const lightbox = document.getElementById('certificate-lightbox');
+        const lightboxImg = document.getElementById('certificate-lightbox-img');
+        const closeBtn = document.getElementById('certificate-lightbox-close');
+        const img = document.getElementById('certificate-image');
+        if (!btn || !lightbox || !img) return;
+
+        function openLightbox() {
+            lightboxImg.src = img.src;
+            lightboxImg.alt = img.alt;
             lightbox.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
