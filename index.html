@@ -130,6 +130,11 @@
             color: rgba(26, 110, 181, 0.75);
             letter-spacing: 0.04em;
         }
+        .product-card img {
+            aspect-ratio: 1 / 1;
+            object-fit: contain;
+            background: #05070d;
+        }
 </style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased">
@@ -142,15 +147,15 @@
 </a>
 <nav class="hidden md:flex space-x-8">
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Process</a>
-<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#products">Products</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#">Source</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#water-quality-report">Quality Report</a>
 <a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md" href="#certifications">Certifications</a>
 </nav>
 <div class="hidden md:block">
-<button class="bg-primary text-on-primary px-6 py-2 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
+<a href="#products" class="inline-block bg-primary text-on-primary px-6 py-2 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
                     Order Now
-                </button>
+                </a>
 </div>
 <!-- Mobile hamburger -->
 <button id="menu-toggle" aria-label="Open menu" aria-expanded="false" class="md:hidden flex items-center justify-center w-10 h-10 rounded-lg text-primary hover:bg-primary/5 transition-colors">
@@ -161,13 +166,13 @@
 <div id="mobile-menu" class="hidden md:hidden border-t border-outline-variant/20 bg-white/95 backdrop-blur-md">
 <nav class="flex flex-col px-4 py-4 space-y-1 max-w-[1280px] mx-auto">
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#">Process</a>
-<a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#">Products</a>
+<a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#products">Products</a>
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#">Source</a>
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#water-quality-report">Quality Report</a>
 <a class="block py-3 px-2 rounded-lg text-on-surface hover:bg-primary/5 hover:text-primary transition-colors font-body-md text-body-md" href="#certifications">Certifications</a>
-<button class="mt-2 w-full bg-primary text-on-primary px-6 py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
+<a href="#products" class="mt-2 block text-center w-full bg-primary text-on-primary px-6 py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
                     Order Now
-                </button>
+                </a>
 </nav>
 </div>
 </header>
@@ -177,19 +182,20 @@
 <main class="max-w-[1280px] mx-auto px-4 sm:px-6 md:px-margin-desktop">
 <!-- Hero Section -->
 <section class="relative min-h-[70vh] md:min-h-[80vh] flex items-center py-12 md:py-section-gap mb-12 md:mb-section-gap overflow-hidden rounded-xl mt-4 md:mt-gutter">
-<div class="absolute inset-0 bg-cover bg-center z-0 opacity-40" data-alt="Crystal clear water splashing over a sleek glass bottle, bright and premium light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMe6GUwASgljPY4HD0E3MXkehjjlL2UwZOuNDKMWtZD_qLnu2V5_YgcKQT9jH6HkrTwfkc1X1nZhwL7shTvrXe-B65NXMf4h7VDg-lf673HndQhYbPkS1DhaT4pyJypZgZ6a6CbtP9IQ50v7610luJt94C3sRfU3fhyDKxprR-xFSFees4KVmHm5vTwwhc2YW3r2OMsHV2L3fu1sFykm0I_sQLc__vgVd_TcgTR4eUDcCpZEvoOssj')"></div>
+<div class="absolute inset-0 bg-cover bg-center z-0 opacity-90" data-alt="Crystal clear water splashing over a sleek glass bottle, bright and premium light-mode aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBMe6GUwASgljPY4HD0E3MXkehjjlL2UwZOuNDKMWtZD_qLnu2V5_YgcKQT9jH6HkrTwfkc1X1nZhwL7shTvrXe-B65NXMf4h7VDg-lf673HndQhYbPkS1DhaT4pyJypZgZ6a6CbtP9IQ50v7610luJt94C3sRfU3fhyDKxprR-xFSFees4KVmHm5vTwwhc2YW3r2OMsHV2L3fu1sFykm0I_sQLc__vgVd_TcgTR4eUDcCpZEvoOssj')"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent z-0"></div>
 <div class="relative z-10 w-full max-w-2xl glass-panel p-6 sm:p-8 md:p-12 rounded-xl mx-2 sm:mx-0">
 <h1 class="font-display-lg text-display-lg text-primary mb-4 md:mb-6">Pure Hydration, <br/><span class="text-gradient">Delivered.</span></h1>
 <p class="font-body-md text-body-md text-on-surface-variant mb-6 md:mb-8 max-w-lg">
                     Experience the ultimate clarity. Sourced from pristine environments and purified through our advanced 7-step process, BRAVO delivers unmatched refreshment directly to your door.
                 </p>
 <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-<button class="w-full sm:w-auto bg-primary-container text-on-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-body-md text-body-md hover:opacity-90 transition-opacity shadow-lg">
+<a href="#products" class="w-full sm:w-auto text-center bg-primary-container text-on-primary px-6 sm:px-8 py-3 sm:py-4 rounded-full font-body-md text-body-md hover:opacity-90 transition-opacity shadow-lg">
                         Shop Now
-                    </button>
-<button class="w-full sm:w-auto glass-panel text-primary border border-primary/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-body-md text-body-md hover:bg-white/90 transition-colors">
+                    </a>
+<a href="#products" class="w-full sm:w-auto text-center glass-panel text-primary border border-primary/20 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-body-md text-body-md hover:bg-white/90 transition-colors">
                         View Plans
-                    </button>
+                    </a>
 </div>
 </div>
 </section>
@@ -222,6 +228,82 @@
 <h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-3 md:mb-4">Next-Day Speed</h3>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Seamless subscription management and guaranteed next-day delivery straight to your home or office.</p>
 </div>
+</div>
+</section>
+
+<!-- Products -->
+<section id="products" class="py-12 md:py-section-gap mb-12 md:mb-section-gap scroll-mt-24 md:scroll-mt-28">
+<div class="text-center mb-10 md:mb-16">
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-3 md:mb-4">Our Products</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto px-2">Choose the size that fits your home or office. All prices in PKR.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-gutter">
+
+<!-- 19 Liter -->
+<div class="product-card glass-card rounded-xl overflow-hidden flex flex-col">
+<img src="products/19liter.jpg" alt="BRAVO 19 Liter Drinking Water Bottle" class="w-full"/>
+<div class="p-5 sm:p-6 flex flex-col flex-1">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">19 Liter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Refillable jumbo bottle &middot; ideal for home &amp; office dispensers</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 200</span>
+<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+</div>
+</div>
+</div>
+
+<!-- 12 Liter -->
+<div class="product-card glass-card rounded-xl overflow-hidden flex flex-col">
+<img src="products/12liter.jpg" alt="BRAVO 12 Liter Drinking Water Bottle" class="w-full"/>
+<div class="p-5 sm:p-6 flex flex-col flex-1">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">12 Liter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Mid-size bottle &middot; great for small households</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 220</span>
+<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+</div>
+</div>
+</div>
+
+<!-- 6 Liter -->
+<div class="product-card glass-card rounded-xl overflow-hidden flex flex-col">
+<img src="products/6liter.jpg" alt="BRAVO 6 Liter Drinking Water Bottle" class="w-full"/>
+<div class="p-5 sm:p-6 flex flex-col flex-1">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">6 Liter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Compact bottle &middot; easy to carry and store</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 110</span>
+<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+</div>
+</div>
+</div>
+
+<!-- 1.5 Liter pack of 6 -->
+<div class="product-card glass-card rounded-xl overflow-hidden flex flex-col">
+<img src="products/1.5liter-pack6.jpg" alt="BRAVO 1.5 Liter Drinking Water Bottle, pack of 6" class="w-full"/>
+<div class="p-5 sm:p-6 flex flex-col flex-1">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">1.5 Liter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Pack of 6 bottles &middot; perfect for family use</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 230<span class="text-body-sm font-normal text-on-surface-variant">/pack</span></span>
+<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+</div>
+</div>
+</div>
+
+<!-- 0.5 Liter pack of 12 -->
+<div class="product-card glass-card rounded-xl overflow-hidden flex flex-col">
+<img src="products/0.5liter-pack12.jpg" alt="BRAVO 0.5 Liter Drinking Water Bottle, pack of 12" class="w-full"/>
+<div class="p-5 sm:p-6 flex flex-col flex-1">
+<h3 class="font-headline-lg-mobile text-headline-lg-mobile text-primary mb-1">0.5 Liter</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mb-4">Pack of 12 bottles &middot; on-the-go hydration</p>
+<div class="mt-auto flex items-center justify-between">
+<span class="font-headline-lg-mobile text-primary text-xl font-bold">Rs. 240<span class="text-body-sm font-normal text-on-surface-variant">/pack</span></span>
+<a href="#" class="bg-primary text-on-primary px-5 py-2.5 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">Order Now</a>
+</div>
+</div>
+</div>
+
 </div>
 </section>
 
