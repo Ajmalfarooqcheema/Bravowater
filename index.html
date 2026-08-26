@@ -130,13 +130,7 @@
             color: rgba(26, 110, 181, 0.75);
             letter-spacing: 0.04em;
         }
-        #report-lightbox {
-            display: none;
-        }
-        #report-lightbox.open {
-            display: flex;
-        }
-    </style>
+</style>
 </head>
 <body class="bg-background text-on-background font-body-md antialiased">
 <!-- TopNavBar -->
@@ -267,29 +261,12 @@ Valid until 30 Jun 2027
 Water is fit for drinking
 </span>
 </div>
-<button type="button" id="report-image-btn" class="block w-full cursor-zoom-in rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow focus:outline-none focus:ring-2 focus:ring-[#1a6eb5]/40" aria-label="View full water quality report">
-<img id="report-image" alt="BRAVO Drinking Water quality report" class="w-full h-auto"/>
-</button>
-<p class="font-body-sm text-body-sm text-on-surface-variant mt-4 text-center">Tap or click the report to view full size</p>
+<div class="rounded-lg overflow-hidden shadow-md">
+<img id="report-image" alt="BRAVO Drinking Water quality report" class="block w-full h-auto"/>
+</div>
 </div>
 </section>
 </main>
-
-<!-- Certificate lightbox -->
-<div id="certificate-lightbox" class="fixed inset-0 z-[100] bg-black/80 items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Full size Punjab Food Authority license certificate">
-<button type="button" id="certificate-lightbox-close" class="absolute top-4 right-4 text-white/90 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Close">
-<span class="material-symbols-outlined" style="font-size:32px;">close</span>
-</button>
-<img id="certificate-lightbox-img" alt="Punjab Food Authority Food Business License Certificate for BRAVO Drinking Water" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"/>
-</div>
-
-<!-- Report lightbox -->
-<div id="report-lightbox" class="fixed inset-0 z-[100] bg-black/80 items-center justify-center p-4" role="dialog" aria-modal="true" aria-label="Full size water quality report">
-<button type="button" id="report-lightbox-close" class="absolute top-4 right-4 text-white/90 hover:text-white p-2 rounded-full hover:bg-white/10 transition-colors" aria-label="Close">
-<span class="material-symbols-outlined" style="font-size:32px;">close</span>
-</button>
-<img id="report-lightbox-img" alt="BRAVO Drinking Water quality report" class="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"/>
-</div>
 
 <!-- Footer -->
 <footer class="w-full bg-surface-container-lowest dark:bg-tertiary border-t border-outline-variant/20 mt-12 md:mt-section-gap">
@@ -340,13 +317,9 @@ Water is fit for drinking
     })();
 
     (function () {
-        const btn = document.getElementById('report-image-btn');
-        const lightbox = document.getElementById('report-lightbox');
-        const lightboxImg = document.getElementById('report-lightbox-img');
-        const closeBtn = document.getElementById('report-lightbox-close');
         const reportImg = document.getElementById('report-image');
         const reportDate = document.getElementById('report-date');
-        if (!btn || !lightbox || !reportImg) return;
+        if (!reportImg) return;
 
         function applyReport(src, dateLabel) {
             const alt = dateLabel
@@ -354,8 +327,6 @@ Water is fit for drinking
                 : 'BRAVO Drinking Water quality report';
             reportImg.src = src;
             reportImg.alt = alt;
-            lightboxImg.src = src;
-            lightboxImg.alt = alt;
             if (reportDate) {
                 reportDate.textContent = dateLabel ? 'Report date: ' + dateLabel : 'Latest lab report';
             }
@@ -377,55 +348,6 @@ Water is fit for drinking
             .catch(function () {
                 applyReport('reports/latest.jpg');
             });
-
-        function openLightbox() {
-            lightboxImg.src = reportImg.src;
-            lightboxImg.alt = reportImg.alt;
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        btn.addEventListener('click', openLightbox);
-        closeBtn.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
-    })();
-
-    (function () {
-        const btn = document.getElementById('certificate-image-btn');
-        const lightbox = document.getElementById('certificate-lightbox');
-        const lightboxImg = document.getElementById('certificate-lightbox-img');
-        const closeBtn = document.getElementById('certificate-lightbox-close');
-        const img = document.getElementById('certificate-image');
-        if (!btn || !lightbox || !img) return;
-
-        function openLightbox() {
-            lightboxImg.src = img.src;
-            lightboxImg.alt = img.alt;
-            lightbox.classList.add('open');
-            document.body.style.overflow = 'hidden';
-        }
-        function closeLightbox() {
-            lightbox.classList.remove('open');
-            document.body.style.overflow = '';
-        }
-
-        btn.addEventListener('click', openLightbox);
-        closeBtn.addEventListener('click', closeLightbox);
-        lightbox.addEventListener('click', function (e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-        document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') closeLightbox();
-        });
     })();
 </script>
 </body></html>
