@@ -435,7 +435,7 @@ Water is fit for drinking
 <span id="checkout-total" class="text-primary font-headline-lg-mobile text-lg font-bold">Rs. 0</span>
 </div>
 
-<form id="checkout-form" class="space-y-4">
+<form id="checkout-form" class="space-y-4" novalidate>
 <div>
 <label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Full Name</label>
 <input id="checkout-name" type="text" required placeholder="Your name" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"/>
@@ -660,32 +660,45 @@ Send Order on WhatsApp
     }
 
 document.getElementById('checkout-form').addEventListener('submit', function (e) {
-        e.preventDefault();
-        var name = document.getElementById('checkout-name').value.trim();
-        var phone = document.getElementById('checkout-phone').value.trim();
-        var address = document.getElementById('checkout-address').value.trim();
-        var errorEl = document.getElementById('checkout-error');
+    e.preventDefault();
+    
+    var name = document.getElementById('checkout-name').value.trim();
+    var phone = document.getElementById('checkout-phone').value.trim();
+    
+    // Get the new address values
+    var city = document.getElementById('checkout-city').value;
+    var area = document.getElementById('checkout-area').value;
+    var street = document.getElementById('checkout-street').value.trim();
+    var errorEl = document.getElementById('checkout-error');
 
-        if (!name || !phone) {
-            errorEl.classList.remove('hidden');
-            return;
-        }
-        errorEl.classList.add('hidden');
+    // Check that all required fields are filled
+    if (!name || !phone || !area || !street) {
+        errorEl.textContent = "Please fill in all required fields, including your area and house number.";
+        errorEl.classList.remove('hidden');
+        return;
+    }
+    errorEl.classList.add('hidden');
+    
+    // Combine them into a single address string for the message
+    var address = street + ", " + area + ", " + city;
 
-        var message = buildOrderMessage(name, phone, address);
-        var waLink = 'https://wa.me/' + STORE_WHATSAPP + '?text=' + encodeURIComponent(message);
-        var mailLink = 'mailto:' + STORE_EMAIL + '?subject=' + encodeURIComponent('New order from ' + name) + '&body=' + encodeURIComponent(message);
-        document.getElementById('checkout-email-fallback').setAttribute('href', mailLink);
+    // Build the final message
+    var message = buildOrderMessage(name, phone, address);
+    var waLink = 'https://wa.me/' + STORE_WHATSAPP + '?text=' + encodeURIComponent(message);
+    var mailLink = 'mailto:' + STORE_EMAIL + '?subject=' + encodeURIComponent('New order from ' + name) + '&body=' + encodeURIComponent(message);
+    
+    document.getElementById('checkout-email-fallback').setAttribute('href', mailLink);
 
-        window.open(waLink, '_blank');
+    // Open WhatsApp
+    window.open(waLink, '_blank');
 
-        // Clear cart after sending
-        cart = {};
-        saveCart(cart);
-        renderCart();
-        closeCheckout();
-        document.getElementById('checkout-form').reset();
-    });
+    // Clear cart after sending
+    cart = {};
+    saveCart(cart);
+    renderCart();
+    closeCheckout();
+    document.getElementById('checkout-form').reset();
+});
 
     renderCart();
 </script>
