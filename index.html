@@ -444,9 +444,46 @@ Water is fit for drinking
 <label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Phone Number *</label>
 <input id="checkout-phone" type="tel" required placeholder="03XX-XXXXXXX" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"/>
 </div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <!-- City Dropdown -->
+    <div>
+        <label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">City *</label>
+        <select id="checkout-city" required class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white">
+            <option value="Rawalpindi">Rawalpindi</option>
+        </select>
+    </div>
+    <!-- Area Dropdown -->
+    <div>
+        <label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Delivery Area *</label>
+        <select id="checkout-area" required class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30 bg-white">
+            <option value="" disabled selected>Select Area</option>
+            <option value="Al Haram City">Al Haram City</option>
+            <option value="Allahabad">Allahabad</option>
+            <option value="Bahria Town">Bahria Town</option>
+            <option value="Bakra Mandi">Bakra Mandi</option>
+            <option value="Barf Khana Chowk">Barf Khana Chowk</option>
+            <option value="Blue World City">Blue World City</option>
+            <option value="Capital Smart City">Capital Smart City</option>
+            <option value="Chakri Road">Chakri Road</option>
+            <option value="Chungi No. 26">Chungi No. 26</option>
+            <option value="Dhamial Camp">Dhamial Camp</option>
+            <option value="Ghaziabad">Ghaziabad</option>
+            <option value="Girja Road">Girja Road</option>
+            <option value="Harley Street">Harley Street</option>
+            <option value="Khan Village">Khan Village</option>
+            <option value="Lalazar">Lalazar</option>
+            <option value="Misrial">Misrial</option>
+            <option value="Morgah">Morgah</option>
+            <option value="Ranial">Ranial</option>
+            <option value="Tench Bhatta">Tench Bhatta</option>
+            <option value="Westridge">Westridge</option>
+        </select>
+    </div>
+</div>
+<!-- House / Street Input -->
 <div>
-<label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">Delivery Address</label>
-<textarea id="checkout-address" rows="2" placeholder="House #, Street, Area, City" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"></textarea>
+    <label class="font-body-sm text-body-sm text-on-surface-variant block mb-1">House & Street No. *</label>
+    <input id="checkout-street" type="text" required placeholder="e.g. House 12, Street 4" class="w-full rounded-lg border border-outline-variant/40 px-4 py-2.5 font-body-md text-body-md focus:outline-none focus:ring-2 focus:ring-primary/30"/>
 </div>
 <p id="checkout-error" class="hidden text-error font-body-sm text-body-sm">Please enter your name and phone number.</p>
 <button type="submit" class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 rounded-full font-body-sm text-body-sm hover:opacity-90 transition-opacity">
@@ -622,7 +659,7 @@ Send Order on WhatsApp
         return lines.join('\n');
     }
 
-    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+document.getElementById('checkout-form').addEventListener('submit', function (e) {
         e.preventDefault();
         var name = document.getElementById('checkout-name').value.trim();
         var phone = document.getElementById('checkout-phone').value.trim();
