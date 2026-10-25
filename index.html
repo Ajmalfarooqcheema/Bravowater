@@ -346,7 +346,7 @@ Valid until 30 Jun 2027
 </section>
 
 <!-- Water Quality Report -->
-<!-- Monthly update: replace reports/latest.jpg and edit the date in reports/latest.json. Do not edit this HTML. -->
+<!-- Monthly update: replace reports/latest.docx (or reports/latest.jpg) and optionally edit the date in reports/latest.json. Do not edit this HTML. -->
 <section id="water-quality-report" class="py-12 md:py-section-gap mb-12 md:mb-section-gap scroll-mt-24 md:scroll-mt-28">
 <div class="text-center mb-8 md:mb-12">
 <h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary mb-3 md:mb-4">Water Quality Report</h2>
@@ -360,9 +360,7 @@ Valid until 30 Jun 2027
 Water is fit for drinking
 </span>
 </div>
-<div class="rounded-lg overflow-hidden shadow-md">
-<img id="report-image" alt="BRAVO Drinking Water quality report" class="block w-full h-auto"/>
-</div>
+<div id="report-view" class="rounded-lg overflow-hidden shadow-md bg-white"></div>
 </div>
 </section>
 </main>
@@ -724,39 +722,10 @@ document.getElementById('checkout-form').addEventListener('submit', function (e)
             });
         });
     })();
-
-    (function () {
-        const reportImg = document.getElementById('report-image');
-        const reportDate = document.getElementById('report-date');
-        if (!reportImg) return;
-
-        function applyReport(src, dateLabel) {
-            const alt = dateLabel
-                ? 'BRAVO Drinking Water quality report — ' + dateLabel
-                : 'BRAVO Drinking Water quality report';
-            reportImg.src = src;
-            reportImg.alt = alt;
-            if (reportDate) {
-                reportDate.textContent = dateLabel ? 'Report date: ' + dateLabel : 'Latest lab report';
-            }
-        }
-
-        applyReport('reports/latest.jpg');
-
-        fetch('reports/latest.json', { cache: 'no-store' })
-            .then(function (res) {
-                if (!res.ok) throw new Error('Report config missing');
-                return res.json();
-            })
-            .then(function (data) {
-                var file = data.file || 'latest.jpg';
-                var dateLabel = data.date || '';
-                var src = 'reports/' + file + (dateLabel ? '?v=' + encodeURIComponent(dateLabel) : '');
-                applyReport(src, dateLabel);
-            })
-            .catch(function () {
-                applyReport('reports/latest.jpg');
-            });
-    })();
 </script>
+
+<!-- Water Quality Report viewer (supports reports/latest.docx, falls back to reports/latest.jpg) -->
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/docx-preview@0.3.3/dist/docx-preview.min.js"></script>
+<script src="report-viewer.js"></script>
 </body></html>
